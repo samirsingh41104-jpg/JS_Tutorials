@@ -128,4 +128,19 @@ console.log(++gameCtr); // Outputs: 102 (Value was 101, immediately bumped to 10
 // Bad Practice Warning:
 // let num1, num2, num3;
 // num1 = num2 = num3 = 2 + 2; <-- Avoid chaining assignments. It hurts code readability.
-//Learn increment from mdn
+//Learn increment from mdnt 
+
+
+// ==========================================
+// 5. SYMBOLS (Guaranteed Uniqueness)
+// ==========================================
+// Symbol() creates a completely unique, immutable primitive value.
+// The string passed inside 'Symbol()' is just a description, not the value itself.
+
+const id = Symbol('123');
+const anotherId = Symbol('123');
+
+console.log(id == anotherId);  // false -> Even with identical descriptions, they are unique tokens
+console.log(id === anotherId); // false
+
+// Use Case: Ideal for creating hidden, collision-free object properties.
