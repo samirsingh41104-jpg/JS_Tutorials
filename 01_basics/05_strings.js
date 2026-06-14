@@ -1,35 +1,45 @@
-// let str1 = "Hello!"
-// let str2 = ' World'
-// let str3 = str1+str2 //Hello! World
-// console.log(str3);
+// ==========================================
+// 1. STRING CREATION & CONCATENATION
+// ==========================================
 
-const name = "Sam"
-const repoCount = 2
-// console.log(name + " "+ repoCount + " Value");
+// Old/Traditional way (Concatenation)
+const name = "Sam";
+const repoCount = 2;
+// console.log(name + " " + repoCount + " Value"); // Clunky, hard to manage
 
-console.log(`Hello my name is ${name} and my repo count is ${repoCount}.`); //string interpolation
+// Modern way (Template Literals / String Interpolation)
+// Backticks (``) allow embedding variables directly using ${}
+console.log(`Hello my name is ${name} and my repo count is ${repoCount}.`); 
 
-const gameName =  new String('Sam-XLit')
-console.log(gameName); 
-console.log(gameName[0]);
-console.log(gameName.__proto__);
-console.log(gameName.length);
-console.log(gameName.toUpperCase());
-console.log(gameName.charAt(2));
-console.log(gameName.indexOf('t'));
+// Declaring as a String Object (Allows treating string like a key-value object)
+const gameName = new String('Sam-XLit'); 
 
-const newStr = gameName.substring(0, 3)
-console.log(newStr);
 
-const slicedStr = gameName.slice(-6, -2)
-console.log(slicedStr);
+// ==========================================
+// 2. INSPECTING A STRING
+// ==========================================
 
-const strii = "     Sam      "
-console.log(strii);
-console.log(strii.trim()); //trim(), trimEnd(), trimStart()
+console.log(gameName[0]);         // 'S'  -> Access character by index (0-based)
+console.log(gameName.__proto__);   // {}   -> Shows the prototype object (methods available)
+console.log(gameName.length);      // 8    -> Returns total number of characters
 
-const url = "https://hitesh.com/hitesh%20choudhary"
-console.log(url.replace('%20', '-'));
-console.log(url.includes('hitesh'));//true
 
-console.log(url.split('h'));
+// ==========================================
+// 3. BASIC TRANSFORMATIONS & LOOKUPS
+// ==========================================
+
+console.log(gameName.toUpperCase()); // "SAM-XLIT" -> Original string remains unchanged (Primitive immutable)
+console.log(gameName.charAt(2));     // 'm'        -> Returns character at index 2
+console.log(gameName.indexOf('t'));  // 7          -> Returns first index where 't' is found
+
+
+// ==========================================
+// 4. EXTRACTING SUBSTRINGS (Crucial Difference!)
+// ==========================================
+
+// .substring(start, end) -> Extracts from 'start' up to (but not including) 'end'
+// Note: Does NOT accept negative indices (treats negative numbers as 0)
+const newStr = gameName.substring(0, 3); 
+console.log(newStr); // "Sam"
+
+// .slice(start, end) -> Similar to substring, but ACCEPT negative indices (
