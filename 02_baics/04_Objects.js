@@ -31,3 +31,16 @@ console.log(Object.keys(tinderUser));
 console.log(Object.values(tinderUser));
 console.log(Object.entries(tinderUser));
 console.log(tinderUser.hasOwnProperty("isLoggedIn"));
+
+const course = {
+  courseName: "JS_Basics",
+  price: "899",
+  courseInstructor: "Samir",
+};
+//course.courseInstructor
+//if
+//const { courseInstructor} = course;
+//console.log(courseInstructor); //Samir
+
+const { courseInstructor: instructor} = course;
+console.log(instructor);
