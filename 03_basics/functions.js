@@ -29,3 +29,29 @@ function loginUserMsg(username){
 }
 console.log(loginUserMsg("sam")); // sam just logged in
 console.log(loginUserMsg()); // undefined just logged in
+
+
+
+// 2nd PART ------>>>
+
+function calculateCartPrice(...num1){ // ... = Rest Operators
+    return num1
+}
+console.log(calculateCartPrice(200, 400, 550))
+
+const user = {
+    username: "Sam",
+    price: 199
+}
+
+function handleObject(anyObject){
+    console.log(`Username is ${anyObject.username} and price is ${anyObject.price}.`);
+}
+
+handleObject(user)
+
+const myNewArray = [200, 400, 100, 600]
+function returnSecondVal(getArray){
+    return getArray[1]
+}
+console.log(returnSecondVal(myNewArray));
