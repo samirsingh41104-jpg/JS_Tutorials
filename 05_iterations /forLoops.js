@@ -3,12 +3,12 @@
 // for (let index = 0; index < array.length; index++) {
 //     const element = array[index]; 
 // }
-// for(let index = 5 ; index < 12; index++){
-//     console.log(index);
-//     if(index === 10){
-//         console.log("Messi is no. 1");
-//     }
-// }
+for(let index = 5 ; index < 12; index++){
+//    console.log(index);
+    if(index === 10){
+//        console.log("Messi is no. 1");
+    }
+}
 
 // =======Nested for loop========
 for(let i = 0; i < 3; i++){
