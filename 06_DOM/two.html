@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Traversal Revision | Chai aur Code</title>
+  </head>
+  <body style="background-color: #212121; color: #fff; font-family: sans-serif;">
+    
+    <div class="parent">
+      <div class="day">Monday</div>
+      <div class="day">Tuesday</div>
+      <div class="day">Wednesday</div>
+      <div class="day">Thursday</div>
+    </div>
+
+    <script>
+      // ==========================================
+      // 1. SELECTING THE PARENT
+      // ==========================================
+      const parent = document.querySelector(".parent");
+      console.log("--- Parent Element ---");
+      console.log(parent);
+
+      // ==========================================
+      // 2. PARENT TO CHILD TRAVERSAL
+      // ==========================================
+      console.log("\n--- Parent to Child ---");
+      
+      // parent.children returns an HTMLCollection (Array-like object)
+      console.log("All Children (HTMLCollection):", parent.children);
+      console.log("Second Child Element:", parent.children[1]); 
+
+      // Looping through HTMLCollection using a standard for-loop
+      console.log("Looping through children:");
+      for (let i = 0; i < parent.children.length; i++) {
+        console.log(`Index ${i}: ${parent.children[i].innerHTML}`);
+      }
+
+      // Quick access properties for first and last elements
+      console.log("First Element Child:", parent.firstElementChild.innerHTML);
+      console.log("Last Element Child:", parent.lastElementChild.innerHTML);
+
+      // Manipulating style via child index
+      parent.children[1].style.color = "crimson"; // Changes 'Tuesday' to crimson
+
+      // ==========================================
+      // 3. CHILD TO PARENT & SIBLING TRAVERSAL
+      // ==========================================
+      console.log("\n--- Child to Parent / Siblings ---");
+      
+      const dayOne = document.querySelector(".day"); // Selects the FIRST .day (Monday)
+      console.log("Selected Child:", dayOne.innerHTML);
+      
+      // Moving up to the parent
+      console.log("Parent of Child:", dayOne.parentElement);
+      
+      // Moving to the next element sibling
+      console.log("Next Element Sibling:", dayOne.nextElementSibling.innerHTML);
+
+      // ==========================================
+      // 4. THE IMPORTANT DISTINCTION: ELEMENTS VS NODES
+      // ==========================================
+      console.log("\n--- The Node List ---");
+      
+      // parent.childNodes returns a NodeList. 
+      // It includes elements, text (line breaks/spaces), and comments.
+      console.log("All Nodes (Includes text/line-breaks):", parent.childNodes);
+    </script>
+  </body>
+</html>
