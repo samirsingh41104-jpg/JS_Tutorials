@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Creation Revision | Chai aur Code</title>
+</head>
+<body style="background-color: #212121; color: #fff; font-family: sans-serif;">
+    
+    <script>
+        // ==========================================
+        // 1. CREATING AN ELEMENT (In-Memory)
+        // ==========================================
+        // At this point, the element exists only in JS memory, not on the page.
+        const div = document.createElement("div");
+        console.log("Initial Empty Div:", div);
+
+        // ==========================================
+        // 2. SETTING ATTRIBUTES & STYLES
+        // ==========================================
+        // Direct property assignment
+        div.className = "main";
+        
+        // Generating a random ID between 1 and 11
+        div.id = Math.round(Math.random() * 10 + 1); 
+        
+        // Using setAttribute (Good practice for custom or standard attributes)
+        div.setAttribute("title", "Generated via JS");
+
+        // Styling the element
+        div.style.backgroundColor = "green";
+        div.style.padding = "12px";
+        div.style.borderRadius = "5px";
+        div.style.marginTop = "10px";
+
+        // ==========================================
+        // 3. ADDING CONTENT (The Optimized Way)
+        // ==========================================
+        // Using document.createTextNode is more optimized than innerHTML or innerText 
+        // because it doesn't trigger extra layout recalculations or HTML parsing.
+        const addText = document.createTextNode("This is a div created dynamically using JS!");
+        
+        // Attaching the text node to our in-memory div
+        div.appendChild(addText);
+
+        // ==========================================
+        // 4. INJECTING INTO THE DOM Tree
+        // ==========================================
+        // This line makes the element visible on the website by pinning it to the body.
+        document.body.appendChild(div);
+        
+        console.log("Final Injected Div Structure:", div);
+    </script>
+</body>
+</html>
