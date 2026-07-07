@@ -1,0 +1,41 @@
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.Canvas {
+    padding: 40px;
+    text-align: center;
+    min-height: 100vh;
+    transition: background-color 0.3s ease; /* Adds a smooth color transition effect */
+}
+
+/* Shared button properties */
+.Button {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 50%; /* Optional: This turns the squares into nice circular swatches! */
+}
+
+/* Specific background colors assigned by ID */
+#grey {
+    background-color: grey;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#green {
+    background-color: green;
+}
+
+#red {
+    background-color: red;
+}
