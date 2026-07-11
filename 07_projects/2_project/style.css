@@ -1,0 +1,12 @@
+body {
+  background-color: #212121;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+.Container {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 25px;
+}
